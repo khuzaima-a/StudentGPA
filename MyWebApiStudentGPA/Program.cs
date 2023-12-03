@@ -61,6 +61,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddScoped<IStudentDL, StudentDL>();
+builder.Services.AddScoped<IStudentBL, StudentBL>();
 builder.Services.AddScoped<ITokenServices, TokenService>();
 
 var app = builder.Build();
