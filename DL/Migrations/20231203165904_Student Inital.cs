@@ -4,7 +4,7 @@
 
 namespace DL.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class StudentInital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,6 +50,7 @@ namespace DL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_studentSubjectDbDto", x => x.Id);
+                    table.UniqueConstraint("AK_studentSubjectDbDto_SID_SubjectId", x => new { x.SID, x.SubjectId });
                     table.ForeignKey(
                         name: "FK_studentSubjectDbDto_studentDbDto_SID",
                         column: x => x.SID,
@@ -78,10 +79,10 @@ namespace DL.Migrations
                 {
                     table.PrimaryKey("PK_markDbDto", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_markDbDto_studentSubjectDbDto_SubjectId",
-                        column: x => x.SubjectId,
+                        name: "FK_markDbDto_studentSubjectDbDto_SID_SubjectId",
+                        columns: x => new { x.SID, x.SubjectId },
                         principalTable: "studentSubjectDbDto",
-                        principalColumn: "Id",
+                        principalColumns: new[] { "SID", "SubjectId" },
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -89,17 +90,6 @@ namespace DL.Migrations
                 name: "IX_markDbDto_SID_SubjectId",
                 table: "markDbDto",
                 columns: new[] { "SID", "SubjectId" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_markDbDto_SubjectId",
-                table: "markDbDto",
-                column: "SubjectId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_studentSubjectDbDto_SID",
-                table: "studentSubjectDbDto",
-                column: "SID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_studentSubjectDbDto_SubjectId",
