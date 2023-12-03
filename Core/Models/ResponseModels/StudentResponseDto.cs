@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Core.Models.ResponseModels
@@ -13,10 +14,12 @@ namespace Core.Models.ResponseModels
         public string RollNo { get ; set ; }
         public double GPA { get; set ; }
         public string PhoneNumber { get ; set ; }
+        public List<SubjectResponseDto> studentSubjects { get; set; } = new List<SubjectResponseDto>();
     }
+
 
     public class StudentDetailSubjectResponseDto:StudentResponseDto
     {
-        public List<StudentSubjectMarksDto> SubjectMarks { get; set; }  
+        public List<SubjectResponseDto> SubjectsAssociated { get; set; }
     }
 }

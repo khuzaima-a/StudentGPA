@@ -62,6 +62,13 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.AddScoped<IStudentDL, StudentDL>();
 builder.Services.AddScoped<IStudentBL, StudentBL>();
+builder.Services.AddScoped<ISubjectBL, SubjectBl>();
+builder.Services.AddScoped<ISubjectDL, SubjectDL>();
+builder.Services.AddScoped<IStudentSubjectMarksBL, StudentSubjectMarksBL>();
+builder.Services.AddScoped<IStudentSubjectMarksDL, StudentSubjectMarksDL>();
+builder.Services.AddScoped<IStudentSubjectAssignmentBL, StudentSubjectBL>();
+builder.Services.AddScoped<IStudentSubjectAssignmentDL, StudentSubjectDL>();
+
 builder.Services.AddScoped<ITokenServices, TokenService>();
 
 var app = builder.Build();

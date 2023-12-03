@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    public class StudentSubjectMarksDto
+    public interface StudentSubjectMarksDto
     {
         public int SID { get; set; }
         public int SubjectId { get; set; }

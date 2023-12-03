@@ -10,8 +10,10 @@ namespace Core.Interfaces
 {
     public interface IStudentDL
     {
-        public StudentResponseDto SaveStudent(StudentRequestDto studentRequestDto);
-        public StudentDetailSubjectResponseDto GetStudent(int id);    
-        public IEnumerable<StudentResponseDto> GetStudentsAsync();
+        public StudentResponseDto SaveStudent(StudentRequestDto studentRequestDto);  
+        IEnumerable<StudentResponseDto> GetStudents();
+        void DeleteStudent(int id);
+        public StudentResponseDto GetStudentDetails(int id);
+        public StudentResponseDto SaveStudent(int id, StudentRequestDto studentRequestDto);
     }
 }

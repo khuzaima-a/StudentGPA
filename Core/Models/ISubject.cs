@@ -8,6 +8,8 @@ namespace Core.Models
 {
     interface ISubject
     {
-        string Name { get; set; }    
+        string Name { get; set; }   
+        string Code { get; set; }
+        int CreditHours { get; set; }
     }
 }

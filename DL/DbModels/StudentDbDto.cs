@@ -17,7 +17,7 @@ namespace DL.DbModels
         public string RollNumber { get; set; }
         public String PhoneNumber { get; set; }
 
-        ICollection<StudentSubjectDbDto> studentSubjects { get; set; } = new List<StudentSubjectDbDto>();
+        public ICollection<StudentSubjectDbDto> studentSubjects { get; set; } = new List<StudentSubjectDbDto>();
 
     }
 }

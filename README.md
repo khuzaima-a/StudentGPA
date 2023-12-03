@@ -18,6 +18,7 @@ Endpoint: PUT /subjects/{subject_id}
 Payload: Updated subject details
 Delete Subject:
 Endpoint: DELETE /subjects/{subject_id}
+
 Student-Subject Assignment API:
 
 Assign Subject to Student:

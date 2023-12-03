@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,10 @@ namespace DL.DbModels
     {
         [Key]
         public int id { get; set; }
-        string Name { get; set; }
+        public string Name { get; set; }
+        public string Code { get; set; }
+        public int CreditHour {  get; set; }
 
-        ICollection<StudentSubjectDbDto> StudentSubjects { get; set; } = new List<StudentSubjectDbDto>();
+        public ICollection<StudentSubjectDbDto> StudentSubjects { get; set; } = new List<StudentSubjectDbDto>();
     }
 }

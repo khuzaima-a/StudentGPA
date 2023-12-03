@@ -12,11 +12,14 @@ namespace DL.DbModels
     {
         [Key]
         public int Id { get; set; }
-        public int SID { get; set;}
+        [Required]
+        public int SID { get; set; }
         public StudentDbDto studentDbDto { get; set; }
         public SubjectDbDto SubjectDbDto { get; set; }
+        [Required]
         public int SubjectId { get; set; }
-        public double GPA { get; set; }
-
+        //public double GPA { get; set; }
+        public MarksDbDto marksDbDto { get; set; }
     }
+
 }
